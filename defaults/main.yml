@@ -1,0 +1,15 @@
+---
+snmp_packages:
+  - net-snmp
+  - net-snmp-utils
+
+# snmpd.conf
+snmp_com2sec:
+  - { sec_name: public, source: default, community: public }
+
+snmp_groups:
+  - { group_name: public_group, sec_name: public }
+
+snmp_syslocation: Unknown
+snmp_syscontact: "Root <root@localhost>"
+snmp_dontLogTCPWrappersConnects: "yes"
