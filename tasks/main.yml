@@ -1,19 +1,12 @@
 ---
 # install
 - name: Ensure snmpd is installed.
-  yum:
-    name: "{{ item }}"
-    state: installed
+  yum: name={{ item }} state=installed
   with_items: "{{ snmp_packages }}"
 
 # configure
 - name: Place snmpd configuration file in place.
-  template:
-    src: snmpd.conf.j2
-    dest: /etc/snmp/snmpd.conf
-    owner: root
-    group: root
-    mode: 00644
+  template: src=snmpd.conf.j2 dest=/etc/snmp/snmpd.conf
   notify: restart snmpd
 
 # service
