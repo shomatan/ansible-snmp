@@ -1,8 +1,4 @@
 ---
-snmp_packages:
-  - net-snmp
-  - net-snmp-utils
-
 # snmpd.conf
 snmp_com2sec:
   - { sec_name: public, source: default, community: public }

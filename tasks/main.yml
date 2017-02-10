@@ -1,4 +1,8 @@
 ---
+# variable setup.
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+    
 # install
 - name: Ensure snmpd is installed.
   yum: name={{ item }} state=installed
